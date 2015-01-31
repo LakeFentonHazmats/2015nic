@@ -18,6 +18,7 @@ import org.usfirst.frc.team2145.robot.subsystems.*;
 public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static final Slide slide = new Slide();
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static OI oi;
 

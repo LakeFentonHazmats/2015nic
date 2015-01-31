@@ -56,9 +56,9 @@ public class DriveTrain extends Subsystem{
 		//Makes it so none can be above 1
 		
 		frontRightWheel.set(front_right);
-		frontLeftWheel.set(front_left);
+		frontLeftWheel.set(-front_left);
 		backRightWheel.set(rear_right);
-		backLeftWheel.set(rear_left);
+		backLeftWheel.set(-rear_left);
 		//Sends Data to Talons
 	}
 	

@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 	Joystick stick = new Joystick(0);
+	Joystick stick2 = new Joystick(1);
 	
 	
 	
@@ -16,11 +17,14 @@ public class OI {
 	
 	
 	public double JoystickY () {
-		return stick.getRawAxis(0);
+		return stick.getRawAxis(1);
+	}
+	public double JoystickY2 () {
+		return stick2.getRawAxis(1);
 	}
 	
 	public double JoystickX () {
-		return stick.getRawAxis(1);
+		return stick.getRawAxis(0);
 	} 
 	
 	public double JoystickZ () {
