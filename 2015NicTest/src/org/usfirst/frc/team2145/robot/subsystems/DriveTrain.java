@@ -35,7 +35,7 @@ public class DriveTrain extends Subsystem{
 	public void MecanumDrive (double X,double Y,double Z) {
 	   
 		double forward= -Y;
-		double right= X;
+		double right= -X;
 		double clockwise= Z;
 		//Gets Directions; like from Joy Sticks.
 		

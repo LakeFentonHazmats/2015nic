@@ -28,7 +28,7 @@ public class OI {
 	} 
 	
 	public double JoystickZ () {
-		return stick.getRawAxis(3) + stick.getRawAxis(2);
+		return stick.getRawAxis(2) - stick.getRawAxis(3);
 	} 
 	
 	
