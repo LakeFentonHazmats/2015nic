@@ -16,18 +16,21 @@ public class OI {
 	
 	
 	
-	public double JoystickY () {
+	public double StickY () {
 		return stick.getRawAxis(1);
 	}
-	public double JoystickY2 () {
+	public double Stick2Y () {
 		return stick2.getRawAxis(1);
 	}
+	public double Stick2Y2 () {
+		return stick2.getRawAxis(5);
+	}
 	
-	public double JoystickX () {
+	public double StickX () {
 		return stick.getRawAxis(0);
 	} 
 	
-	public double JoystickZ () {
+	public double StickZ () {
 		return stick.getRawAxis(2) - stick.getRawAxis(3);
 	} 
 	

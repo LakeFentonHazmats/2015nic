@@ -6,23 +6,21 @@ import edu.wpi.first.wpilibj.TalonSRX;
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc.team2145.robot.commands.DriveWithController;
+import org.usfirst.frc.team2145.robot.RobotMap;
 
 
 public class DriveTrain extends Subsystem{
 	
-	TalonSRX frontRightWheel = new TalonSRX(2);
-	TalonSRX frontLeftWheel = new TalonSRX(3);
-	TalonSRX backRightWheel = new TalonSRX(4);
-	TalonSRX backLeftWheel = new TalonSRX(5);
+	TalonSRX frontRightWheel = new TalonSRX(RobotMap.frontRightWheel);
+	TalonSRX frontLeftWheel = new TalonSRX(RobotMap.frontLeftWheel);
+	TalonSRX backRightWheel = new TalonSRX(RobotMap.backRightWheel);
+	TalonSRX backLeftWheel = new TalonSRX(RobotMap.backLeftWheel);
 	
-	Encoder frontRightEncoder = new Encoder(1,2);
-	Encoder frontLeftEncoder = new Encoder(3,4);
-	Encoder backRightEncoder = new Encoder(5,6);
-	Encoder backLeftEncoder= new Encoder(7,8);
+	Encoder backRightEncoder = new Encoder(RobotMap.backRightEncoder1,RobotMap.backRightEncoder2);
+	Encoder backLeftEncoder= new Encoder(RobotMap.backLeftEncoder1,RobotMap.backLeftEncoder2);
 	
-	Gyro gyro = new Gyro(1);
+	Gyro gyro = new Gyro(RobotMap.driveGyro);
 	
 	
 	
@@ -34,10 +32,10 @@ public class DriveTrain extends Subsystem{
 	
 	public void MecanumDrive (double X,double Y,double Z) {
 	   
-		double forward= -Y;
-		double right= -X;
+		double forward= Y;
+		double right= X;
 		double clockwise= Z;
-		//Gets Directions; like from Joy Sticks.
+		//Gets Directions like from Joy Sticks.
 		
 		double front_left = forward + clockwise + right;
 		double front_right = forward - clockwise- right;
@@ -64,7 +62,7 @@ public class DriveTrain extends Subsystem{
 	
 	@SuppressWarnings("deprecation")
 	public void logDrive(){
-		double encoderAverage = (frontLeftEncoder.getDistance() + frontRightEncoder.getDistance() + backRightEncoder.getDistance() + backLeftEncoder.getDistance()) / 4;
+		double encoderAverage = (backRightEncoder.getDistance() + backLeftEncoder.getDistance()) / 2;
 		SmartDashboard.putDouble("Encoder Avg", encoderAverage);
 		
 	}

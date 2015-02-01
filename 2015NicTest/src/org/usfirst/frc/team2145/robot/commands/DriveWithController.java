@@ -16,7 +16,7 @@ public class DriveWithController extends Command {
 
 	    // Called repeatedly when this Command is scheduled to run
 	    protected void execute() {
-	    	Robot.driveTrain.MecanumDrive(Robot.oi.JoystickX(), Robot.oi.JoystickY(), Robot.oi.JoystickZ());
+	    	Robot.driveTrain.MecanumDrive(Robot.oi.StickX(), Robot.oi.StickY(), Robot.oi.StickZ());
 	    }
 
 	    // Make this return true when this Command no longer needs to run execute()

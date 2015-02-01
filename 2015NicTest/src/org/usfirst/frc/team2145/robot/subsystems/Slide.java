@@ -1,13 +1,15 @@
 package org.usfirst.frc.team2145.robot.subsystems;
 
+import org.usfirst.frc.team2145.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Talon;
+import org.usfirst.frc.team2145.robot.commands.ExtendWithController;
 
 
 
 public class Slide extends Subsystem{
 	
-	Talon slideMotor = new Talon(1);
+	Talon slideMotor = new Talon(RobotMap.slideMotor);
 	
 	
 	// Put methods for controlling this subsystem
@@ -15,7 +17,7 @@ public class Slide extends Subsystem{
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ExtendWithController());
     }
     public void extendWithController(double extendSpeed){
     	slideMotor.set(extendSpeed);

@@ -3,8 +3,8 @@ package org.usfirst.frc.team2145.robot.commands;
 import org.usfirst.frc.team2145.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class extendWithController extends Command{
-	public extendWithController() {
+public class ExtendWithController extends Command{
+	public ExtendWithController() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.slide);
     }
@@ -15,7 +15,7 @@ public class extendWithController extends Command{
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.slide.extendWithController(Robot.oi.JoystickY2());
+    	Robot.slide.extendWithController(Robot.oi.Stick2Y2());
     }
 
     // Make this return true when this Command no longer needs to run execute()
